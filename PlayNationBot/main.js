@@ -18,7 +18,7 @@ bot.command("start", async ctx => {
                     'Playnation is a Telegram-based gaming wallet featuring a wide array of highly interactive games, tailored to connect Web3 users with abundant airdrops from top-tier web3 projects' ,
                 parse_mode: 'HTML',
                 reply_markup: {
-                    inline_keyboard: [[Markup.button.webApp('Open app', BOT_URL)]],
+                    inline_keyboard: [[Markup.button.webApp('Open app', WEB_APP_URL)]],
                 }
             }
         );
