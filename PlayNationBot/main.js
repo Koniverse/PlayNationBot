@@ -10,7 +10,8 @@ bot.telegram.setMyCommands([
     },
 ]);
 bot.command("start", async ctx => {
-        await ctx.reply('Welcome!', Markup.keyboard([Markup.button.webApp('Open app', WEB_APP_URL)], ).resize(true));
+        // await ctx.reply('Welcome!', Markup.keyboard([Markup.button.webApp('Open app', WEB_APP_URL)], ).resize(true));
+        await ctx.reply('Welcome!');
         await ctx.replyWithPhoto(
             BANNER_URL,
             {
