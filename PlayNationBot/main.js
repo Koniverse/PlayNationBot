@@ -1,7 +1,7 @@
 const {Markup} = require("telegraf");
 const Telegraf = require('telegraf').Telegraf;
 require('dotenv').config();
-const {BANNER_URL, WEB_APP_URL, TELEGRAM_BOT_TOKEN} = process.env;
+const {BANNER_URL,BOT_URL, WEB_APP_URL, TELEGRAM_BOT_TOKEN} = process.env;
 const bot = new Telegraf(TELEGRAM_BOT_TOKEN);
 bot.telegram.setMyCommands([
     {
@@ -10,7 +10,7 @@ bot.telegram.setMyCommands([
     },
 ]);
 bot.command("start", async ctx => {
-        await ctx.reply('Welcome!', Markup.keyboard([Markup.button.webApp('Open apps', WEB_APP_URL)], ).resize(true));
+        await ctx.reply('Welcome!', Markup.keyboard([Markup.button.webApp('Open app', WEB_APP_URL)], ).resize(true));
         await ctx.replyWithPhoto(
             BANNER_URL,
             {
@@ -18,7 +18,7 @@ bot.command("start", async ctx => {
                     'Playnation is a Telegram-based gaming wallet featuring a wide array of highly interactive games, tailored to connect Web3 users with abundant airdrops from top-tier web3 projects' ,
                 parse_mode: 'HTML',
                 reply_markup: {
-                    inline_keyboard: [[Markup.button.webApp('Open apps', WEB_APP_URL)]],
+                    inline_keyboard: [[Markup.button.webApp('Open app', BOT_URL)]],
                 }
             }
         );
